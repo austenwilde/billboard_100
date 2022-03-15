@@ -12,7 +12,7 @@ class Api::BillboardsController < ApplicationController
   end 
 
   def create
-    @billboard = Billboard.new(sub_params)
+    @billboard = Billboard.new(billboard_params)
     if @billboard.save
       render json: @billboard
     else

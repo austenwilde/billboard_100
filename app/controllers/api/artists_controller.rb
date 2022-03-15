@@ -41,7 +41,6 @@ class Api::ArtistsController < ApplicationController
     end
 
     def set_artist
-      
       @artist = billboard.artists.find(params[:id])
     end
 

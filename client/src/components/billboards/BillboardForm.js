@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 
 const BillboardForm = ({ addBillboard, id, title, updateBillboard, setEdit }) => {
-  const [Billboard, setBillboard] = useState({ title: '' })
+  const [billboard, setBillboard] = useState({ title: '' })
 
   
   useEffect( () => {

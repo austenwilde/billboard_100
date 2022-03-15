@@ -1,6 +1,6 @@
 import Billboard from './Billboard';
 
-const BillboardList = ({ subs, updateBillboard, deleteBillboard }) => (
+const BillboardList = ({ billboards, updateBillboard, deleteBillboard }) => (
   <>
     { billboards.map( s => 
       <Billboard

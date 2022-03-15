@@ -24,13 +24,11 @@ const Billboard = ({ id, title, updateBillboard, deleteBillboard }) => {
         <>
           <button 
             onClick={() => setEdit(true)}
-            style={styles.btn}
           >
             Edit
           </button>
           <button 
             onClick={() => deleteBillboard(id)}
-            style={styles.deleteBtn}
           >
             Delete
           </button>
@@ -48,4 +46,4 @@ const Billboard = ({ id, title, updateBillboard, deleteBillboard }) => {
 }
 
 
-export default Sub;
+export default Billboard;

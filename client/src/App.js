@@ -1,45 +1,24 @@
-import { useState, useEffect } from 'react';
-import axios from 'axios';
-import BillboardForm from './components/billboards/BillboardForm';
+import { Routes, Route } from 'react-router-dom';
+import Home from './components/shared/Home';
+import About from './components/shared/About';
+import Nomatch from './components/shared/Nomatch';
+import Navbar from './components/shared/Navbar';
+import Billboards from './components/billboards/Billboards';
+import Artists from './components/artists/Artists';
+import Songs from './components/songs/Songs';
 
-const App = () => {
-  const [billboards, setBillboards] = useState([])
-
-  useEffect( () => {
-    
-    axios.get('/api/billboards')
-      .then( res => {
-       
-        setBillboards(res.data)
-      })
-      .catch( err => console.log(err) )
-  }, [])
-
-  const addBillboard = (billboard) => {
-   
-    axios.post('/api/billboards', { billboard })
-      .then( res => {
-       
-        setBillboards([...billboards, res.data ])
-      })
-      .catch( err => console.log(err) )
-  }
-
-  const updateBillboard = (id, billboard) => {
-    
-  }
-
-  const deleteBillboard = (id) => {
-    
-  }
-
-  return(
-    <>
-      <h1>Billboard Top 100</h1>
-      <BillboardForm addBillboard={addBillboard} />
-    </>
-  )
-}
+const App = () => (
+  <>
+    <Navbar />
+    <Routes>
+      <Route path="/" element={ <Home /> } />
+      <Route path="/about" element={ <About /> } />
+      <Route path="/billboards" element={ <Billboards /> } />
+      <Route path="/billboards/:billboardId/artists" element={ <Artists /> } />
+      <Route path="/artists/:artistId/songs" element={ <Songs /> } />
+      <Route path="*" element={ <Nomatch /> } />
+    </Routes>
+  </>
+)
 
 export default App;
-
