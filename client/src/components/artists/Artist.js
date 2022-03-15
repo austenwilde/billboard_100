@@ -36,3 +36,5 @@ const Artist = ({ id, title, body, fav, updateArtist, deleteArtist }) => {
     </>
   )
 }
+
+export default Artist 
